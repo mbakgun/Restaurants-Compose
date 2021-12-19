@@ -1,0 +1,13 @@
+dependencyResolutionManagement {
+  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+  repositories {
+    google()
+    mavenCentral()
+  }
+}
+rootProject.name = "restaurants"
+include ':app'
+include ':core'
+include ':restaurants'
+include ':tests'
+include ':androidTest'

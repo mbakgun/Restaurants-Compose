@@ -1,0 +1,17 @@
+<resources>
+    <string name="sort">Sort</string>
+    <string name="genericErrorMessage">An error occurred !</string>
+    <string name="test_progress_tag">Progress</string>
+    <string name="filter_restaurant_name">Filter restaurant name</string>
+    <string name="select_sorting">Select Sorting</string>
+    <string name="opening_state">Opening State</string>
+    <string name="best_match">Best Match</string>
+    <string name="newest">Newest</string>
+    <string name="rating">Rating</string>
+    <string name="distance">Distance</string>
+    <string name="popularity">Popularity</string>
+    <string name="average_price">Average Price</string>
+    <string name="delivery_cost">Delivery Cost</string>
+    <string name="minimum_cost">Minimum Cost</string>
+    <string name="input">Input</string>
+</resources>
