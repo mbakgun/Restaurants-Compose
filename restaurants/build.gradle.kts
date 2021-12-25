@@ -1,19 +1,19 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
-    id("kotlin-parcelize")
-    kotlin("plugin.serialization") version Versions.kotlin
+    id(Plugins.androidLibrary)
+    kotlin(Plugins.kotlinAndroid)
+    kotlin(Plugins.kotlinKapt)
+    id(Plugins.androidHilt)
+    id(Plugins.kotlinParcelize)
+    kotlin(Plugins.kotlinSerialization) version Versions.kotlin
 }
 
 android {
-    compileSdk = 31
+    compileSdk = Configs.compileSdk
     defaultConfig {
-        minSdk = 21
-        targetSdk = 31
+        minSdk = Configs.minSdk
+        targetSdk = Configs.targetSdk
     }
 
     buildTypes {
