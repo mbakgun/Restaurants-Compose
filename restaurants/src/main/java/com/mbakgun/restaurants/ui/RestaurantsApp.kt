@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mbakgun.restaurants.navigation.Screen
-import com.mbakgun.restaurants.ui.screen.RestaurantsActivityScreen
+import com.mbakgun.restaurants.ui.screen.RestaurantsScreen
 
 @Composable
 fun RestaurantsApp(){
@@ -18,7 +18,7 @@ fun RestaurantsApp(){
         composable(
             route = Screen.RestaurantsScreen.route
         ) {
-            RestaurantsActivityScreen()
+            RestaurantsScreen()
         }
     }
 }

@@ -7,7 +7,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.core.view.WindowCompat.setDecorFitsSystemWindows
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.mbakgun.core.compose.QuickSandTypography
-import com.mbakgun.restaurants.ui.screen.RestaurantsActivityScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
