@@ -4,6 +4,8 @@
       "id": "1",
       "name": "Tanoshii Sushi",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2018/08/22/10/15/bottles-3623317_960_720.jpg",
+      "description": "Saag paneer is a popular Indian dish with iron-rich spinach and cubes of paneer, an Indian cheese that is firm enough to retain it's shape, but silky-soft on the inside. We have reimagined Saag Paneer and replaced the \"paneer\" with crispy cubes of firm tofu, making this already delicious and nutritious vegetarian dish burst with protein. Toasted pita bread is served alongside as an ode to naan. Cook, relax, and enjoy! [VIDEO](https://www.youtube.com/watch?v=RMzWWwfWdVs)",
       "sortingValues": {
         "bestMatch": 0.0,
         "newest": 96.0,
@@ -19,6 +21,8 @@
       "id": "2",
       "name": "Tandoori Express",
       "status": "closed",
+      "imageUrl": "https://cdn.pixabay.com/photo/2016/03/05/09/22/eat-1237431_960_720.jpg",
+      "description": "Warmer weather means the ushering in of grill season and this recipe completely celebrates the grill (or grill pan)! Squash and green beans are nicely charred then take a bath in a zesty cilantro-jalapeño dressing. After the steaks are perfectly seared, the same dressing does double duty as a tasty finishing sauce. A fresh radish salad tops it all off for crunch and a burst of color. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 1.0,
         "newest": 266.0,
@@ -34,6 +38,8 @@
       "id": "3",
       "name": "Royal Thai",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/09/21/05/58/coffee-5589038_960_720.jpg",
+      "description": "Crispy chicken skin, tender meat, and rich, tomatoey sauce form a winning trifecta of delicious in this one-pot braise. We spoon it over rice and peas to soak up every last drop of goodness, and serve a tangy arugula salad alongside for a vibrant boost of flavor and color. Dinner is served! Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 2.0,
         "newest": 133.0,
@@ -49,6 +55,8 @@
       "id": "4",
       "name": "Sushi One",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2014/12/15/14/05/salad-569156_960_720.jpg",
+      "description": "*Grilled Cheese 101*: Use delicious cheese and good quality bread; make crunchy on the outside and ooey gooey on the inside; add one or two ingredients for a flavor punch! In this case, cherry preserves serve as a sweet contrast to cheddar cheese, and basil adds a light, refreshing note. Use __mayonnaise__ on the outside of the bread to achieve the ultimate, crispy, golden-brown __grilled cheese__. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 3.0,
         "newest": 238.0,
@@ -64,6 +72,7 @@
       "id": "5",
       "name": "Roti Shop",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/06/08/16/49/pizza-5275191_960_720.jpg",
       "sortingValues": {
         "bestMatch": 4.0,
         "newest": 247.0,
@@ -79,6 +88,8 @@
       "id": "6",
       "name": "Aarti 2",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/09/17/12/41/cafe-5579069_960_720.jpg",
+      "description": "*Grilled Cheese 101*: Use delicious cheese and good quality bread; make crunchy on the outside and ooey gooey on the inside; add one or two ingredients for a flavor punch! In this case, cherry preserves serve as a sweet contrast to cheddar cheese, and basil adds a light, refreshing note. Use __mayonnaise__ on the outside of the bread to achieve the ultimate, crispy, golden-brown __grilled cheese__. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 5.0,
         "newest": 153.0,
@@ -94,6 +105,8 @@
       "id": "7",
       "name": "Pizza Heart",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2013/09/05/10/38/catering-179046_960_720.jpg",
+      "description": "Crispy chicken skin, tender meat, and rich, tomatoey sauce form a winning trifecta of delicious in this one-pot braise. We spoon it over rice and peas to soak up every last drop of goodness, and serve a tangy arugula salad alongside for a vibrant boost of flavor and color. Dinner is served! Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 6.0,
         "newest": 118.0,
@@ -109,6 +122,8 @@
       "id": "8",
       "name": "Mama Mia",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2021/02/08/12/40/lasagna-5994612_960_720.jpg",
+      "description": "Warmer weather means the ushering in of grill season and this recipe completely celebrates the grill (or grill pan)! Squash and green beans are nicely charred then take a bath in a zesty cilantro-jalapeño dressing. After the steaks are perfectly seared, the same dressing does double duty as a tasty finishing sauce. A fresh radish salad tops it all off for crunch and a burst of color. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 7.0,
         "newest": 250.0,
@@ -124,6 +139,8 @@
       "id": "9",
       "name": "Feelfood",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2021/02/06/19/29/pancakes-5989136_960_720.jpg",
+      "description": "Saag paneer is a popular Indian dish with iron-rich spinach and cubes of paneer, an Indian cheese that is firm enough to retain it's shape, but silky-soft on the inside. We have reimagined Saag Paneer and replaced the \"paneer\" with crispy cubes of firm tofu, making this already delicious and nutritious vegetarian dish burst with protein. Toasted pita bread is served alongside as an ode to naan. Cook, relax, and enjoy! [VIDEO](https://www.youtube.com/watch?v=RMzWWwfWdVs)",
       "sortingValues": {
         "bestMatch": 8.0,
         "newest": 163.0,
@@ -139,6 +156,7 @@
       "id": "10",
       "name": "Daily Sushi",
       "status": "closed",
+      "imageUrl": "https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg",
       "sortingValues": {
         "bestMatch": 9.0,
         "newest": 221.0,
@@ -154,6 +172,8 @@
       "id": "11",
       "name": "Pamukkale",
       "status": "closed",
+      "imageUrl": "https://cdn.pixabay.com/photo/2018/08/03/08/33/food-3581341_960_720.jpg",
+      "description": "*Grilled Cheese 101*: Use delicious cheese and good quality bread; make crunchy on the outside and ooey gooey on the inside; add one or two ingredients for a flavor punch! In this case, cherry preserves serve as a sweet contrast to cheddar cheese, and basil adds a light, refreshing note. Use __mayonnaise__ on the outside of the bread to achieve the ultimate, crispy, golden-brown __grilled cheese__. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 10.0,
         "newest": 201.0,
@@ -169,6 +189,8 @@
       "id": "12",
       "name": "Indian Kitchen",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2021/06/28/10/15/coffee-6371149_960_720.jpg",
+      "description": "Crispy chicken skin, tender meat, and rich, tomatoey sauce form a winning trifecta of delicious in this one-pot braise. We spoon it over rice and peas to soak up every last drop of goodness, and serve a tangy arugula salad alongside for a vibrant boost of flavor and color. Dinner is served! Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 11.0,
         "newest": 272.0,
@@ -184,6 +206,8 @@
       "id": "13",
       "name": "CIRO 1939",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/09/21/05/57/coffee-5589036_960_720.jpg",
+      "description": "Warmer weather means the ushering in of grill season and this recipe completely celebrates the grill (or grill pan)! Squash and green beans are nicely charred then take a bath in a zesty cilantro-jalapeño dressing. After the steaks are perfectly seared, the same dressing does double duty as a tasty finishing sauce. A fresh radish salad tops it all off for crunch and a burst of color. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 12.0,
         "newest": 231.0,
@@ -199,6 +223,8 @@
       "id": "14",
       "name": "Zenzai Sushi",
       "status": "closed",
+      "imageUrl": "https://cdn.pixabay.com/photo/2016/11/18/15/53/breakfast-1835478_960_720.jpg",
+      "description": "Saag paneer is a popular Indian dish with iron-rich spinach and cubes of paneer, an Indian cheese that is firm enough to retain it's shape, but silky-soft on the inside. We have reimagined Saag Paneer and replaced the \"paneer\" with crispy cubes of firm tofu, making this already delicious and nutritious vegetarian dish burst with protein. Toasted pita bread is served alongside as an ode to naan. Cook, relax, and enjoy! [VIDEO](https://www.youtube.com/watch?v=RMzWWwfWdVs)",
       "sortingValues": {
         "bestMatch": 13.0,
         "newest": 155.0,
@@ -214,6 +240,8 @@
       "id": "15",
       "name": "Fes Patisserie",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2017/01/24/03/54/urban-2004494_960_720.jpg",
+      "description": "*Grilled Cheese 101*: Use delicious cheese and good quality bread; make crunchy on the outside and ooey gooey on the inside; add one or two ingredients for a flavor punch! In this case, cherry preserves serve as a sweet contrast to cheddar cheese, and basil adds a light, refreshing note. Use __mayonnaise__ on the outside of the bread to achieve the ultimate, crispy, golden-brown __grilled cheese__. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 14.0,
         "newest": 77.0,
@@ -229,6 +257,7 @@
       "id": "16",
       "name": "Yvonne's Vispaleis",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2014/10/22/17/50/bar-498420_960_720.jpg",
       "sortingValues": {
         "bestMatch": 15.0,
         "newest": 150.0,
@@ -244,6 +273,8 @@
       "id": "17",
       "name": "De Amsterdamsche Tram",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2019/09/12/15/21/resort-4471852_960_720.jpg",
+      "description": "Crispy chicken skin, tender meat, and rich, tomatoey sauce form a winning trifecta of delicious in this one-pot braise. We spoon it over rice and peas to soak up every last drop of goodness, and serve a tangy arugula salad alongside for a vibrant boost of flavor and color. Dinner is served! Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 304.0,
         "newest": 131.0,
@@ -259,6 +290,8 @@
       "id": "18",
       "name": "Lale Restaurant & Snackbar",
       "status": "order ahead",
+      "imageUrl": "https://cdn.pixabay.com/photo/2014/05/18/11/25/pizza-346985_960_720.jpg",
+      "description": "Warmer weather means the ushering in of grill season and this recipe completely celebrates the grill (or grill pan)! Squash and green beans are nicely charred then take a bath in a zesty cilantro-jalapeño dressing. After the steaks are perfectly seared, the same dressing does double duty as a tasty finishing sauce. A fresh radish salad tops it all off for crunch and a burst of color. Cook, relax, and enjoy!",
       "sortingValues": {
         "bestMatch": 305.0,
         "newest": 73.0,
@@ -274,6 +307,8 @@
       "id": "19",
       "name": "Lunchpakketdienst",
       "status": "open",
+      "imageUrl": "https://cdn.pixabay.com/photo/2020/04/17/12/49/barista-5055060_960_720.jpg",
+      "description": "Saag paneer is a popular Indian dish with iron-rich spinach and cubes of paneer, an Indian cheese that is firm enough to retain it's shape, but silky-soft on the inside. We have reimagined Saag Paneer and replaced the \"paneer\" with crispy cubes of firm tofu, making this already delicious and nutritious vegetarian dish burst with protein. Toasted pita bread is served alongside as an ode to naan. Cook, relax, and enjoy! [VIDEO](https://www.youtube.com/watch?v=RMzWWwfWdVs)",
       "sortingValues": {
         "bestMatch": 306.0,
         "newest": 259.0,
