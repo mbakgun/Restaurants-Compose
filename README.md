@@ -13,7 +13,7 @@ Visualize a restaurant list with filtering based on name and sorting value to so
 - Android Architecture Components
 - Code quality, readability and consistent code style (Detekt).
 - Multi-module architecture
-- Jetpack Compose
+- Jetpack Compose with Navigation
 - Kotlin Flow
 - Unit test (JUnit)
 - Instrumentation Test(Compose)
@@ -26,13 +26,15 @@ Visualize a restaurant list with filtering based on name and sorting value to so
 
 ## TODOs
 - [ ] Implement more compose androidTests
-- [ ] Implement navigation component & detail screen
+- WIP [ ] Implement navigation component & detail screen
 
-## Contribution
-I kindly value your contribution! Let's get started ✌️
+## Contribution 👏
+Please feel free to open issues or pull requests; all sorts of contributions are welcome! I kindly value your contribution! Let's get started ✌️
+
+## Contributors 👑
+* [boranfrkn](https://github.com/boranfrkn)
 
 ## Contact
-* Email: burak@mbakgun.com
 * Linkedin: https://www.linkedin.com/in/mbakgun/
 
 License
