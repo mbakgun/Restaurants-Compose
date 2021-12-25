@@ -1,22 +1,22 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
-    id("io.gitlab.arturbosch.detekt").version(Versions.detektVersion)
-    id("com.github.ben-manes.versions").version(Versions.benManesVersion)
+    id(Plugins.androidApplication)
+    kotlin(Plugins.kotlinAndroid)
+    kotlin(Plugins.kotlinKapt)
+    id(Plugins.androidHilt)
+    id(Plugins.detekt).version(Versions.detektVersion)
+    id(Plugins.benManes).version(Versions.benManesVersion)
 }
 
 android {
-    compileSdk = 31
+    compileSdk = Configs.compileSdk
     defaultConfig {
-        applicationId = "com.mbakgun"
-        minSdk = 21
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0.0"
+        applicationId = Configs.applicationId
+        minSdk = Configs.minSdk
+        targetSdk = Configs.targetSdk
+        versionCode = Configs.versionCode
+        versionName = Configs.versionName
     }
 
     buildTypes {

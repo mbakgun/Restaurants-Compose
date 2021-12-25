@@ -1,17 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.library")
-    id("dagger.hilt.android.plugin")
-    kotlin("android")
-    kotlin("kapt")
+    id(Plugins.androidLibrary)
+    id(Plugins.androidHilt)
+    kotlin(Plugins.kotlinAndroid)
+    kotlin(Plugins.kotlinKapt)
 }
 
 android {
-    compileSdk = 31
+    compileSdk = Configs.compileSdk
     defaultConfig {
-        minSdk = 21
-        targetSdk = 31
+        minSdk = Configs.minSdk
+        targetSdk = Configs.targetSdk
     }
 
     buildTypes {
