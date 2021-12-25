@@ -7,6 +7,7 @@ object Versions {
     const val hilt = "2.40.5"
     const val hiltAndroidX = "1.0.0-alpha03"
     const val hiltCompiler= "1.0.0"
+    const val hiltNavigation = "1.0.0-rc01"
     const val lifecycleRuntime = "2.4.0"
     const val timber = "5.0.1"
     const val composeVersion = "1.1.0-rc01"

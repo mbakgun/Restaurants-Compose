@@ -9,7 +9,7 @@ import com.mbakgun.core.domain.model.Result.Success
 import com.mbakgun.restaurants.ui.RestaurantsViewModel
 
 @Composable
-fun RestaurantsActivityScreen() {
+fun RestaurantsScreen() {
     val viewModel = hiltViewModel<RestaurantsViewModel>()
     when (val result = viewModel.restaurantsFlow.collectAsState().value) {
         is Loading -> LoadingScreen()
