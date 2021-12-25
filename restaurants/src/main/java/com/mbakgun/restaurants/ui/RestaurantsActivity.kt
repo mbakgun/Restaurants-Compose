@@ -19,7 +19,7 @@ class RestaurantsActivity : ComponentActivity() {
         setContent {
             MaterialTheme(typography = QuickSandTypography) {
                 ProvideWindowInsets {
-                    RestaurantsActivityScreen()
+                    RestaurantsApp()
                 }
             }
         }

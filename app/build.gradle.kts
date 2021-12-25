@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-kapt")
+    kotlin("android")
+    kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id("io.gitlab.arturbosch.detekt").version(Versions.detektVersion)
     id("com.github.ben-manes.versions").version(Versions.benManesVersion)
