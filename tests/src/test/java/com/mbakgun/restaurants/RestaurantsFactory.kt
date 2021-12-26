@@ -19,7 +19,9 @@ object RestaurantsFactory {
         id = "1",
         name = "Castle",
         sortingValues = getMockSortingDto(),
-        status = "closed"
+        status = "closed",
+        imageUrl = "",
+        description = null
     )
 
     fun getMockSortingDto() = SortingValuesDto(
