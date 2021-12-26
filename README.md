@@ -24,11 +24,6 @@ Visualize a restaurant list with filtering based on name and sorting value to so
 <img src="screenshots/2-min.gif" alt="Restaurants - Jetpack Compose" width="270" />   <img src="screenshots/3-min.gif" alt="Restaurants - Jetpack Compose" width="270" />   <img src="screenshots/4-min.gif" alt="Restaurants - Jetpack Compose" width="270" />
 </p>
 
-## TODOs
-- [ ] WIP : Implement navigation component & detail screen
-- [ ] Dark mode toggle in Toolbar
-- [ ] WIP : Memory data source
-
 ## Contribution 👏
 Please feel free to open issues or pull requests; all sorts of contributions are welcome! I kindly value your contribution! Let's get started ✌️
 
