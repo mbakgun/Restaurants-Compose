@@ -25,8 +25,9 @@ Visualize a restaurant list with filtering based on name and sorting value to so
 </p>
 
 ## TODOs
-- [ ] Implement more compose androidTests
-- WIP [ ] Implement navigation component & detail screen
+- [ ] WIP : Implement navigation component & detail screen
+- [ ] Dark mode toggle in Toolbar
+- [ ] WIP : Memory data source
 
 ## Contribution 👏
 Please feel free to open issues or pull requests; all sorts of contributions are welcome! I kindly value your contribution! Let's get started ✌️

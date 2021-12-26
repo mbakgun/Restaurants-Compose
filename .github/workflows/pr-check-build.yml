@@ -1,0 +1,47 @@
+name: Static Code Analys & Test & Build
+on: pull_request
+jobs:
+    gradle:
+        strategy:
+            matrix:
+                os: [ubuntu-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: actions/setup-java@v1
+              with:
+                  java-version: 11
+
+             - name: Install Android SDK
+               uses: malinskiy/action-android/install-sdk@release/0.1.2
+
+             - name: Gradle Wrapper Validation
+               uses: gradle/wrapper-validation-action@v1
+
+            - uses: eskatos/gradle-command-action@v1
+              with:
+                  arguments: detekt
+
+            - name: Run Unit Tests
+              run: ./gradlew test --stacktrace
+
+            - uses: eskatos/gradle-command-action@v1
+              with:
+                  arguments: assembleDebug
+
+             - name: Run Instrumentation Tests
+               uses: malinskiy/action-android/emulator-run-cmd@release/0.1.2
+               with:
+                    cmd: ./gradlew connectedCheck --stacktrace
+                    api: 25
+                    tag: default
+                    abi: x86
+
+            - name: Reclaim Memory
+              run: ./gradlew --stop && jps|grep -E 'KotlinCompileDaemon|GradleDaemon'| awk '{print $1}'| xargs kill -9
+
+            - uses: actions/upload-artifact@v1
+              with:
+                  name: app
+                  path: app/build/outputs/apk/debug/app-debug.apk
