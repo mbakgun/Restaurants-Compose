@@ -1,4 +1,8 @@
 # Restaurants - Jetpack Compose
+[![Code Analysis & Unit Test & Build](https://github.com/mbakgun/Restaurants-Compose/actions/workflows/pr-check-build.yml/badge.svg)](https://github.com/mbakgun/Restaurants-Compose/actions/workflows/pr-check-build.yml)
+[![Android Weekly #498](https://androidweekly.net/issues/issue-498/badge)](https://androidweekly.net/issues/issue-498)
+
+
 <img src="screenshots/screen.gif" alt="Restaurants - Jetpack Compose" width="1024" />
 An example concepts of MVVM and Kotlin. Display, Filter & Sort the given restaurants from assets with Jetpack Compose and AAC.
 
