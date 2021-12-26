@@ -73,6 +73,7 @@
       "name": "Roti Shop",
       "status": "open",
       "imageUrl": "https://cdn.pixabay.com/photo/2020/06/08/16/49/pizza-5275191_960_720.jpg",
+      "description": null,
       "sortingValues": {
         "bestMatch": 4.0,
         "newest": 247.0,
@@ -157,6 +158,7 @@
       "name": "Daily Sushi",
       "status": "closed",
       "imageUrl": "https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg",
+      "description": null,
       "sortingValues": {
         "bestMatch": 9.0,
         "newest": 221.0,
@@ -258,6 +260,7 @@
       "name": "Yvonne's Vispaleis",
       "status": "order ahead",
       "imageUrl": "https://cdn.pixabay.com/photo/2014/10/22/17/50/bar-498420_960_720.jpg",
+      "description": null,
       "sortingValues": {
         "bestMatch": 15.0,
         "newest": 150.0,

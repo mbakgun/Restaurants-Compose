@@ -14,6 +14,8 @@ data class RestaurantsDto(
         val id: String,
         val name: String,
         val sortingValues: SortingValuesDto,
+        val imageUrl: String,
+        val description: String?,
         val status: String?
     ) {
         @Keep
