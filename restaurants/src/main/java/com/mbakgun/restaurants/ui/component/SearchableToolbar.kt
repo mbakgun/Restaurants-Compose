@@ -28,6 +28,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction.Companion.Done
 import androidx.compose.ui.unit.dp
 import com.mbakgun.core.compose.DarkViolet
+import com.mbakgun.core.compose.Orange
 import com.mbakgun.core.compose.White
 import com.mbakgun.restaurants.R
 import com.mbakgun.restaurants.R.string.filter_restaurant_name
@@ -40,7 +41,6 @@ import com.mbakgun.util.noRippleClickable
 fun SearchableToolbar(
     sortFilter: State<SearchSortFilter>,
     onQueryUpdated: (String) -> Unit,
-    toolbarColor: Color,
     onFilterClicked: () -> Unit,
 ) {
     Row(
@@ -48,7 +48,7 @@ fun SearchableToolbar(
             .fillMaxWidth()
             .height(84.dp)
             .clip(RoundedCornerShape(bottomEnd = 24.dp, bottomStart = 24.dp))
-            .background(toolbarColor),
+            .background(Orange),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {

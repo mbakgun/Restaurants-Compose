@@ -26,7 +26,6 @@ import com.google.accompanist.insets.statusBarsHeight
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.mbakgun.core.compose.Orange
-import com.mbakgun.core.compose.VeryDarkViolet
 import com.mbakgun.restaurants.domain.model.Restaurants.Restaurant
 import com.mbakgun.restaurants.domain.model.SearchSortFilter
 import com.mbakgun.restaurants.domain.model.SearchSortFilter.Sorting
@@ -77,7 +76,12 @@ fun RestaurantListScreen(
     ) {
         SwipeRefresh(
             state = rememberSwipeRefreshState(refreshState.value),
-            onRefresh = onRefresh::invoke
+            onRefresh = {
+                coroutineScope.launch(Main) {
+                    scrollState.animateScrollToItem(0)
+                }
+                onRefresh.invoke()
+            }
         ) {
 
             Column(modifier = Modifier
@@ -86,11 +90,9 @@ fun RestaurantListScreen(
                     detectTapGestures(onPress = { localFocusManager.clearFocus(true) })
                 }) {
 
-                val toolbarColor = if (refreshState.value) VeryDarkViolet else Orange
-
                 Spacer(
-                    Modifier
-                        .background(toolbarColor)
+                    modifier = Modifier
+                        .background(Orange)
                         .statusBarsHeight()
                         .fillMaxWidth()
                 )
@@ -98,7 +100,6 @@ fun RestaurantListScreen(
                 SearchableToolbar(
                     sortFilter = sortFilterState,
                     onQueryUpdated = onQueryUpdated::invoke,
-                    toolbarColor = toolbarColor
                 ) {
                     coroutineScope.launch {
                         localFocusManager.clearFocus(true)

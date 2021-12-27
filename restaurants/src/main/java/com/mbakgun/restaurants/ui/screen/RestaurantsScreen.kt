@@ -18,20 +18,10 @@ fun RestaurantsScreen(
     onRefresh: () -> Unit,
     onQueryUpdated: (String) -> Unit
 ) {
-    val response = result.value
-    val isRefreshing = refreshState.value
-
-    when {
-        isRefreshing -> RestaurantListScreen(
-            sortFilterState = sortFilterState,
-            onSetSorting = onSetSorting,
-            refreshState = refreshState,
-            onRefresh = onRefresh,
-            onQueryUpdated = onQueryUpdated,
-        )
-        response is Loading -> LoadingScreen()
-        response is Error -> ErrorScreen(response.exception.localizedMessage)
-        response is Success -> RestaurantListScreen(
+    when (val response = result.value) {
+        is Loading -> LoadingScreen()
+        is Error -> ErrorScreen(response.exception.localizedMessage)
+        is Success -> RestaurantListScreen(
             restaurants = response.data.restaurants,
             sortFilterState = sortFilterState,
             onSetSorting = onSetSorting,

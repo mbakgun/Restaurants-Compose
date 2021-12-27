@@ -12,19 +12,22 @@ import com.mbakgun.restaurants.domain.usecase.RestaurantsSortUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.channelFlow
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 @HiltViewModel
+@OptIn(ExperimentalCoroutinesApi::class)
 class RestaurantsViewModel @Inject constructor(
     private val restaurantsFetchUseCase: RestaurantsFetchUseCase,
     private val restaurantsSortUseCase: RestaurantsSortUseCase,
@@ -33,25 +36,34 @@ class RestaurantsViewModel @Inject constructor(
 
     private val refreshState = MutableStateFlow(false)
 
-    var restaurantsFlow: StateFlow<Result<Restaurants>> = initRestaurantsFlow()
+    val restaurantsFlow: StateFlow<Result<Restaurants>> = channelFlow {
+        val fetchRestaurantsFlow: Flow<Result<Restaurants>> =
+            restaurantsFetchUseCase
+                .fetchRestaurants()
 
-    init {
-        viewModelScope.launch {
-            refreshState.collect { isRefreshing ->
-                if (isRefreshing) restaurantsFlow = initRestaurantsFlow()
+        val sortFilterFlow: Flow<Result<Restaurants>> =
+            restaurantsSortUseCase
+                .getSortFilterFlow()
+                .flatMapLatest {
+                    restaurantsSortUseCase.sortRestaurants()
+                }
+
+        val refreshFlow: Flow<Result<Restaurants>> =
+            refreshState
+                .filter { it }
+                .flatMapLatest {
+                    restaurantsFetchUseCase
+                        .fetchRestaurants()
+                        .onCompletion {
+                            refreshState.tryEmit(false)
+                        }
+                }
+
+        merge(fetchRestaurantsFlow, sortFilterFlow, refreshFlow)
+            .collect {
+                restaurantsSortUseCase.setRestaurantsResult(it)
+                send(it)
             }
-        }
-    }
-
-    private fun initRestaurantsFlow() = flow {
-        restaurantsFetchUseCase.fetchRestaurants().onCompletion {
-            refreshState.tryEmit(false)
-        }.combine(restaurantsSortUseCase.getSortFilterFlow()) { restaurants, _ ->
-            restaurants
-        }.collect {
-            restaurantsSortUseCase.setRestaurantsResult(it)
-            emitAll(restaurantsSortUseCase.sortRestaurants())
-        }
     }.flowOn(ioDispatcher).stateIn(
         viewModelScope,
         SharingStarted.Eagerly,

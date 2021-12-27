@@ -18,12 +18,18 @@ class RestaurantsSortUseCase @Inject constructor(
 ) {
 
     private var restaurantsResult: Result<Restaurants>? = null
+    private var restaurantsData: Restaurants? = null
 
     private val sortFilterFlow = MutableStateFlow(SearchSortFilter())
 
     fun getSortFilterFlow(): Flow<SearchSortFilter> = sortFilterFlow
 
     fun setRestaurantsResult(result: Result<Restaurants>) {
+        if (restaurantsData == null &&
+            result.data?.restaurants?.isNotEmpty() == true
+        ) {
+            restaurantsData = result.data
+        }
         restaurantsResult = result
     }
 
@@ -36,12 +42,11 @@ class RestaurantsSortUseCase @Inject constructor(
     }
 
     fun refresh() {
-        restaurantsResult = null
         sortFilterFlow.value = SearchSortFilter()
     }
 
     fun sortRestaurants(): Flow<Result<Restaurants>> = flowOf(
-        restaurantsResult?.data?.let {
+        restaurantsData?.let {
             Result.Success(Restaurants(it.restaurants.filter { restaurant ->
                 restaurant.name.lowercase()
                     .contains(sortFilterFlow.value.filterQuery.lowercase())
