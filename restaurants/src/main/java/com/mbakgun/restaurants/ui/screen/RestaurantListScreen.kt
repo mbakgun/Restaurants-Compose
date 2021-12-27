@@ -26,6 +26,7 @@ import com.google.accompanist.insets.statusBarsHeight
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.mbakgun.core.compose.Orange
+import com.mbakgun.core.compose.VeryDarkViolet
 import com.mbakgun.restaurants.domain.model.Restaurants.Restaurant
 import com.mbakgun.restaurants.domain.model.SearchSortFilter
 import com.mbakgun.restaurants.domain.model.SearchSortFilter.Sorting
@@ -39,7 +40,7 @@ import kotlinx.coroutines.launch
 @Composable
 @Suppress("LongMethod")
 fun RestaurantListScreen(
-    restaurants: List<Restaurant>,
+    restaurants: List<Restaurant> = listOf(),
     sortFilterState: State<SearchSortFilter>,
     onSetSorting: (Sorting) -> Unit,
     refreshState: State<Boolean>,
@@ -76,10 +77,8 @@ fun RestaurantListScreen(
     ) {
         SwipeRefresh(
             state = rememberSwipeRefreshState(refreshState.value),
-            onRefresh = {
-                coroutineScope.launch(Main) { scrollState.scrollToItem(0) }
-                onRefresh.invoke()
-            }) {
+            onRefresh = onRefresh::invoke
+        ) {
 
             Column(modifier = Modifier
                 .fillMaxSize()
@@ -87,16 +86,19 @@ fun RestaurantListScreen(
                     detectTapGestures(onPress = { localFocusManager.clearFocus(true) })
                 }) {
 
+                val toolbarColor = if (refreshState.value) VeryDarkViolet else Orange
+
                 Spacer(
                     Modifier
-                        .background(Orange)
+                        .background(toolbarColor)
                         .statusBarsHeight()
                         .fillMaxWidth()
                 )
 
                 SearchableToolbar(
                     sortFilter = sortFilterState,
-                    onQueryUpdated = onQueryUpdated::invoke
+                    onQueryUpdated = onQueryUpdated::invoke,
+                    toolbarColor = toolbarColor
                 ) {
                     coroutineScope.launch {
                         localFocusManager.clearFocus(true)

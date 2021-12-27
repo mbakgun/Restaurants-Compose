@@ -10,7 +10,6 @@ import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
 
@@ -37,6 +36,7 @@ class RestaurantsSortUseCase @Inject constructor(
     }
 
     fun refresh() {
+        restaurantsResult = null
         sortFilterFlow.value = SearchSortFilter()
     }
 

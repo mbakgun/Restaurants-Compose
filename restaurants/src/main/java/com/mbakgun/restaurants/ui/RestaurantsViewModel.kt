@@ -1,7 +1,5 @@
 package com.mbakgun.restaurants.ui
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mbakgun.core.di.qualifier.IoDispatcher
@@ -15,13 +13,16 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class RestaurantsViewModel @Inject constructor(
@@ -30,23 +31,34 @@ class RestaurantsViewModel @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
-    private val refreshState = mutableStateOf(false)
+    private val refreshState = MutableStateFlow(false)
 
-    val restaurantsFlow: StateFlow<Result<Restaurants>> = flow {
-        restaurantsFetchUseCase.fetchRestaurants()
-            .combine(restaurantsSortUseCase.getSortFilterFlow()) { restaurants, filter ->
-                restaurantsSortUseCase.setRestaurantsResult(restaurants)
-                filter
-            }.collect {
-                emitAll(restaurantsSortUseCase.sortRestaurants())
+    var restaurantsFlow: StateFlow<Result<Restaurants>> = initRestaurantsFlow()
+
+    init {
+        viewModelScope.launch {
+            refreshState.collect { isRefreshing ->
+                if (isRefreshing) restaurantsFlow = initRestaurantsFlow()
             }
+        }
+    }
+
+    private fun initRestaurantsFlow() = flow {
+        restaurantsFetchUseCase.fetchRestaurants().onCompletion {
+            refreshState.tryEmit(false)
+        }.combine(restaurantsSortUseCase.getSortFilterFlow()) { restaurants, _ ->
+            restaurants
+        }.collect {
+            restaurantsSortUseCase.setRestaurantsResult(it)
+            emitAll(restaurantsSortUseCase.sortRestaurants())
+        }
     }.flowOn(ioDispatcher).stateIn(
         viewModelScope,
         SharingStarted.Eagerly,
         Result.Loading
     )
 
-    fun getRefreshState(): State<Boolean> = refreshState
+    fun getRefreshState(): StateFlow<Boolean> = refreshState
 
     fun getSortStateFlow(): Flow<SearchSortFilter> = restaurantsSortUseCase.getSortFilterFlow()
 
@@ -55,8 +67,9 @@ class RestaurantsViewModel @Inject constructor(
     fun setSorting(sorting: Sorting) = restaurantsSortUseCase.setSorting(sorting)
 
     fun refresh() {
-        refreshState.value = true
-        restaurantsSortUseCase.refresh()
-        refreshState.value = false
+        viewModelScope.launch {
+            refreshState.emit(true)
+            restaurantsSortUseCase.refresh()
+        }
     }
 }

@@ -31,7 +31,9 @@ fun RestaurantsApp() {
                     .getSortStateFlow()
                     .collectAsState(SearchSortFilter()),
                 onSetSorting = viewModel::setSorting,
-                refreshState = viewModel.getRefreshState(),
+                refreshState = viewModel
+                    .getRefreshState()
+                    .collectAsState(),
                 onRefresh = viewModel::refresh,
                 onQueryUpdated = viewModel::setQuery,
             )
