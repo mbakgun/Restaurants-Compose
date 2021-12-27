@@ -19,6 +19,7 @@ Visualize a restaurant list with filtering based on name and sorting value to so
 - Multi-module architecture
 - Jetpack Compose with Navigation
 - Kotlin Flow
+- Multiple Data Sources
 - Unit test (JUnit)
 - Instrumentation Test(Compose)
 - Both vertical / portrait support
