@@ -1,6 +1,7 @@
 # Restaurants - Jetpack Compose
 [![Code Analysis & Unit Test & Build](https://github.com/mbakgun/Restaurants-Compose/actions/workflows/pr-check-build.yml/badge.svg)](https://github.com/mbakgun/Restaurants-Compose/actions/workflows/pr-check-build.yml)
 [![Android Weekly #498](https://androidweekly.net/issues/issue-498/badge)](https://androidweekly.net/issues/issue-498)
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-Restaurants--… )]( https://android-arsenal.com/details/1/8262 )
 
 
 <img src="screenshots/screen.gif" alt="Restaurants - Jetpack Compose" width="1024" />
