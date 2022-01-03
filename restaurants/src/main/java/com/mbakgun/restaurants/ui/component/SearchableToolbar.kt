@@ -41,7 +41,7 @@ import com.mbakgun.util.noRippleClickable
 fun SearchableToolbar(
     sortFilter: State<SearchSortFilter>,
     onQueryUpdated: (String) -> Unit,
-    onFilterClicked: () -> Unit,
+    Icon: @Composable () -> Unit,
 ) {
     Row(
         modifier = Modifier
@@ -87,13 +87,6 @@ fun SearchableToolbar(
             ),
         )
 
-        Icon(
-            imageVector = Icons.Filled.FilterList,
-            contentDescription = stringResource(id = sort),
-            modifier = Modifier
-                .fillMaxWidth(0.4f)
-                .noRippleClickable(onFilterClicked::invoke),
-            tint = White
-        )
+        Icon()
     }
 }
