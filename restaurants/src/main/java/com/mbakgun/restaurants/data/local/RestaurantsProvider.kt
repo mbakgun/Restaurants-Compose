@@ -1,28 +1,26 @@
 package com.mbakgun.restaurants.data.local
 
-import android.content.Context
+import android.content.res.AssetManager
 import com.mbakgun.core.di.qualifier.IoDispatcher
 import com.mbakgun.restaurants.data.local.model.RestaurantsDto
-import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
-import java.io.BufferedReader
+import kotlinx.serialization.json.decodeFromStream
 
 class RestaurantsProvider @Inject constructor(
-    @ApplicationContext private val context: Context,
-    @IoDispatcher private val ioDispatcher: CoroutineDispatcher
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
+    private val json: Json,
+    private val assetManager: AssetManager
 ) {
 
     @Suppress("BlockingMethodInNonBlockingContext")
+    @OptIn(ExperimentalSerializationApi::class)
     suspend fun fetchRestaurants(): RestaurantsDto = withContext(ioDispatcher) {
-        Json.decodeFromString(
-            context.assets
-                .open("restaurants.json")
-                .bufferedReader()
-                .use(BufferedReader::readText)
+        json.decodeFromStream(
+            stream = assetManager.open("restaurants.json")
         )
     }
 }

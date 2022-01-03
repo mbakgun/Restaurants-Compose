@@ -5,6 +5,7 @@ plugins {
     id(Plugins.androidHilt)
     kotlin(Plugins.kotlinAndroid)
     kotlin(Plugins.kotlinKapt)
+    kotlin(Plugins.kotlinSerialization) version Versions.kotlin
 }
 
 android {
@@ -55,6 +56,7 @@ android {
 }
 
 dependencies {
+    implementation(Deps.kotlinSerialization)
     implementation(Deps.hilt)
     implementation(Deps.compose)
     implementation(Deps.composeCompiler)
