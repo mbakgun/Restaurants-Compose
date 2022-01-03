@@ -251,15 +251,12 @@ class RestaurantsSortUseCaseTest {
         }
 
     @Test
-    fun `when restaurants has not set yet flow should return empty data`() =
+    fun `when restaurants has not set yet flow should return Loading`() =
         coroutineTestRule.testScope.runTest {
             sortUseCase.setSorting(Sorting(true))
 
             sortUseCase.sortRestaurants().collectLatest {
-                val restaurants = it.data?.restaurants ?: fail("restaurants are null")
-
-                assert(restaurants.isEmpty())
+                assert(it is Result.Loading)
             }
         }
-
 }

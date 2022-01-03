@@ -76,6 +76,6 @@ class RestaurantsSortUseCase @Inject constructor(
                     }
                 }
             )))
-        } ?: restaurantsResult ?: Result.Success(Restaurants()))
+        } ?: restaurantsResult ?: Result.Loading)
         .flowOn(ioDispatcher)
 }
